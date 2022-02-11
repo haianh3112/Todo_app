@@ -1,0 +1,25 @@
+<h1 class="logo">Todo App</h1>
+
+<input type="text" class="todo-input" placeholder="Add here" [(ngModel)]="todoTitle" (keyup.enter)="addTodo()">
+
+<app-todo-item *ngFor="let todo of todoService.todosFiltered()" [todo]="todo"></app-todo-item>
+
+
+<div class="extra-container">
+    <div><label><input type="checkbox" (change)="todoService.checkAllTodos()"> Check All</label></div>
+    <div>{{todoService.remaining()}} items left</div>
+</div>
+
+<div class="extra-container">
+    <div>
+        <button [ngClass]="{'active': todoService.filter === 'all'}" (click)="todoService.filter='all'">All
+    </button>
+        <button [ngClass]="{'active': todoService.filter === 'all'}" (click)="todoService.filter='active'">Active
+    </button>
+        <button [ngClass]="{'active': todoService.filter === 'all'}" (click)="todoService.filter='completed'">Completed
+    </button>
+    </div>
+    <div *ngIf="todoService.atLeastOneCompleted()">
+        <button (click)="todoService.clearCompleted()">Clear Completed</button>
+    </div>
+</div>

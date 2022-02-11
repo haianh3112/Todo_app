@@ -1,0 +1,52 @@
+.todo-input {
+    width: 100%;
+    padding: 10px 18px;
+    font-size: 18px;
+    margin-bottom: 16px;
+    border-radius: 15px;
+    border-color: lightseagreen;
+    &:focus {
+        outline: 0;
+    }
+}
+
+.extra-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    border-top: 1px solid lightgrey;
+    padding-top: 14px;
+    margin-bottom: 14px;
+}
+
+button {
+    color: rgb(32, 32, 32);
+    font-size: 15px;
+    background-color: white;
+    appearance: none;
+    border-radius: 10px;
+    border-color: rgb(62, 137, 197);
+    margin-right: 10px;
+    &:hover {
+        background: rgb(167, 170, 179);
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.active {
+    background: lightgreen;
+}
+
+// CSS Transitions
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .2s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
